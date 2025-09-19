@@ -1,0 +1,22 @@
+docker pull philippaul/node-mongo-db:02
+
+docker run -d -p 27017:27017 --network my-net --name mongo mongo
+
+docker run --network my-net -p 3000:3000 --name myapp philippaul/node-mongo-db:01
+
+
+#same pod running multiple container 
+
+
+images to use:
+
+philippaul/node-mongo-db:02
+mongo
+
+madhukamath29/node-mongo-db:01
+   - node-app.yml
+
+mongo
+   - mongo-db.yml
+
+   
